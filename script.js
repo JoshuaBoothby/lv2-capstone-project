@@ -46,12 +46,17 @@ async function sendMessageToGemini(userMessage) {
     showLoadingIndicator();
     const key = await fetchApiKey();
     if (!key) {
-      renderNewMessage("Error:", "No Api key");
+      renderNewMessage("Error:", "No API key");
       throw new Error("Could not get key");
     }
 
     const instruction =
-      "| Your name is Robot. Everything between the pipes is our instructions from the website you are being used on. Do not reply with more than 15 words, you are a chat bot. I am pushing your replies directly to the DOM, so do not use markdown syntax. You can use some HTML if you want to style your messages. |";
+      "| Your name is Robot. Everything within these pipes comprises your directives for this website. Your responses must not exceed 25 words. You are a chatbot that answers questions about Cyberpunk Red, Dungeons & Dragons 5th edition, and this website. Your replies are pushed directly to the DOM, so avoid Markdown syntax; HTML styling is permitted. The Business is located at 1234 Mesa Road, Albuquerque, NM 87104. Operating hours are Monday through Saturday, 12 PM to 12 AM. Pricing is $5 per hour, $15 for half-day, and $25 for a full day rental. |";
+
+    // Include chat history in the payload
+    const formattedHistory = chatHistory
+      .map((entry) => `${entry.sender}: ${entry.text}`)
+      .join("\n");
 
     const config = {
       method: "POST",
@@ -64,27 +69,33 @@ async function sendMessageToGemini(userMessage) {
             parts: [
               {
                 text:
-                  userMessage +
                   instruction +
-                  "After this line is our chat history:" +
-                  chatHistory,
+                  "\nChat History:\n" +
+                  formattedHistory +
+                  "\nUser: " +
+                  userMessage,
               },
             ],
           },
         ],
       }),
     };
+
     const res = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" +
         key,
       config
     );
-    if (res.status != 200) {
+
+    if (res.status !== 200) {
       throw new Error("Could not talk to Gemini");
     }
+
     const data = await res.json();
-    renderNewMessage("Robot", data.candidates[0].content.parts[0].text);
-    addToStorage("Robot", data.candidates[0].content.parts[0].text);
+    const botResponse = data.candidates[0].content.parts[0].text;
+
+    renderNewMessage("Robot", botResponse);
+    addToStorage("Robot", botResponse);
     console.log(data);
   } catch (error) {
     console.error(error);

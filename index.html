@@ -14,30 +14,125 @@
     <title>Lv2 Capstone</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+          <a href="index.html" aria-current="page" class="text-2xl font-bold">
+            TableTop Zone
+          </a>
+        </div>
+      </nav>
+    </header>
     <main>
-      <content>
-        <div class="container mx-auto mt-20">
-          <h2 class="text-2xl font-bold mb-4">
-            Welcome to the Capstone Project
-          </h2>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="text-center py-12 bg-cover bg-center text-white"
+        style="background: no-repeat center/cover"
+      >
+        <h1 class="text-5xl font-bold mb-4">Welcome to Tabletop Zone</h1>
+        <p class="mb-6">
+          Your premier destination for discovering epic role-playing adventures
+          and renting the perfect tabletop space to bring your campaigns to
+          life.
+        </p>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-8 bg-gray-300 text-black">
+        <div class="container mx-auto">
+          <h2 class="text-3xl font-bold mb-4">About Tabletop Zone</h2>
           <p class="mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nihil
-            inventore animi eius iusto quia dolor laborum, maxime tenetur
-            explicabo exercitationem numquam, veritatis quos iure corporis
-            itaque error officiis esse!
+            At Tabletop Zone, we celebrate the art of storytelling and immersive
+            gameplay. Whether you’re a seasoned Dungeon Master or just starting
+            your journey in Cyberpunk Red, our site provides up-to-date
+            resources, community insights, and detailed listings of local and
+            online tabletop spaces available for rent.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium, temporibus asperiores libero facere exercitationem a
-            molestias doloribus assumenda labore nemo! Hic quibusdam, numquam
-            nobis aperiam illum atque necessitatibus reiciendis sunt.
+            Our mission is simple: to unite adventurers and provide the ideal
+            environments where epic narratives come to life. Explore our guides,
+            join our vibrant community discussions, and find the perfect venue
+            for your next game night.
           </p>
         </div>
-      </content>
+      </section>
+
+      <!-- Rent Section -->
+      <section id="rent" class="py-8">
+        <div class="container mx-auto">
+          <h2 class="text-3xl font-bold mb-4">
+            Rent the Perfect Tabletop Space
+          </h2>
+          <p class="mb-4">
+            Imagine a venue designed exclusively for your RPG sessions—fully
+            equipped, comfortable, and conducive to creativity. Our
+            comprehensive directory helps you browse available spaces, check
+            availability calendars, and secure a booking in just a few clicks.
+          </p>
+          <p class="mb-4 font-bold">Pricing:</p>
+          <table class="bg-white shadow-md rounded border-collapse text-black">
+            <thead>
+              <tr>
+                <th class="py-2 px-4 border-b">Rental Duration</th>
+                <th class="py-2 px-4 border-b">Price</th>
+                <th class="py-2 px-4 border-b">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-gray-50">
+                <td class="py-2 px-4 border-b">1 Hour</td>
+                <td class="py-2 px-4 border-b">$5</td>
+                <td class="py-2 px-4 border-b">
+                  Perfect for a quick session or trial run.
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-b">Half Day</td>
+                <td class="py-2 px-4 border-b">$15</td>
+                <td class="py-2 px-4 border-b">
+                  Ideal for mini-campaigns or meet-ups.
+                </td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="py-2 px-4 border-b">Full Day</td>
+                <td class="py-2 px-4 border-b">$25</td>
+                <td class="py-2 px-4 border-b">
+                  Great for marathon gaming sessions or special events.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Community Section -->
+      <section id="community" class="py-8 bg-gray-300 text-black">
+        <div class="container mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Join Us</h2>
+          <p class="mb-4">
+            Tabletop Zone is more than just a rental platform—it's a thriving
+            community of like-minded gamers. Share stories, exchange tips on
+            campaign strategy, and stay up-to-date with the latest RPG trends.
+          </p>
+          <p class="mb-4">
+            Proudly based in Albuquerque, New Mexico, our community blends local
+            flavor with a nationwide passion for tabletop gaming. Whether you're
+            nearby or joining us online, you'll find a welcoming space to
+            explore epic adventures.
+          </p>
+          <p class="mb-4">
+            Visit us at <strong>1234 Mesa Road, Albuquerque, NM 87104</strong>.
+            Ample free parking is available in our adjacent lot—just follow the
+            signs at the main entrance.
+          </p>
+        </div>
+      </section>
+
       <section
         id="chatContainer"
         class="bg-white shadow-lg rounded-lg p-4 border border-gray-200 dark:bg-gray-800 dark:border-gray-600"
+        aria
       >
         <div
           id="chatHistory"
