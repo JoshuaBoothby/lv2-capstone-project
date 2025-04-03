@@ -1,0 +1,27 @@
+{
+  "name": "capstone-project",
+  "version": "1.0.0",
+  "description": "// TODO",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaBoothby/lv2-capstone-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaBoothby/lv2-capstone-project/issues"
+  },
+  "homepage": "https://github.com/JoshuaBoothby/lv2-capstone-project#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.1",
+    "tailwindcss": "^4.1.1"
+  },
+  "devDependencies": {
+    "daisyui": "^5.0.12"
+  }
+}

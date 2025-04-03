@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="night" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,27 +10,61 @@
       content="HTML, CSS, TailWind CSS, AI, ChatBot, JavaScript"
     />
     <meta name="author" content="Joshua Boothby" />
-    <title>Capstone</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <title>Lv2 Capstone</title>
   </head>
   <body>
-    <header>
-      <h1>Capstone</h1>
-    </header>
+    <header></header>
     <main>
-      <section id="chatContainer">
-        <div id="chatHistory"></div>
+      <content>
+        <div class="container mx-auto mt-20">
+          <h2 class="text-2xl font-bold mb-4">
+            Welcome to the Capstone Project
+          </h2>
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nihil
+            inventore animi eius iusto quia dolor laborum, maxime tenetur
+            explicabo exercitationem numquam, veritatis quos iure corporis
+            itaque error officiis esse!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Praesentium, temporibus asperiores libero facere exercitationem a
+            molestias doloribus assumenda labore nemo! Hic quibusdam, numquam
+            nobis aperiam illum atque necessitatibus reiciendis sunt.
+          </p>
+        </div>
+      </content>
+      <section
+        id="chatContainer"
+        class="bg-white shadow-lg rounded-lg p-4 border border-gray-200 dark:bg-gray-800 dark:border-gray-600"
+      >
+        <div
+          id="chatHistory"
+          class="h-64 overflow-y-auto mb-4 p-2 bg-gray-50 rounded-lg dark:bg-gray-700"
+        ></div>
         <input
           type="text"
           name="userInput"
           placeholder="Type your message here"
-          aria-label="Type you message here"
+          aria-label="Type your message here"
           id="userInput"
+          class="w-full p-2 mb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
         />
-        <button id="sendButton">Send</button>
+        <button
+          id="sendButton"
+          class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Send
+        </button>
       </section>
     </main>
-    <footer></footer>
 
+    <footer class="bg-gray-800 text-white py-4 mt-10">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Joshua Boothby. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

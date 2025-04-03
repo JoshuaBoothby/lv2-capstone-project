@@ -33,3 +33,5 @@ Requirements
   Demonstrate the application (show how users interact with it).
   Answer questions about your code and the concepts covered.
   Explain any portion of the code you wrote. If you cannot explain it, you risk losing points.
+
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
