@@ -100,7 +100,6 @@ async function sendMessageToGemini(userMessage) {
 
     renderNewMessage("Info-bot", botResponse);
     addToStorage("Info-bot", botResponse);
-    console.log(data);
   } catch (error) {
     console.error(error);
   }
