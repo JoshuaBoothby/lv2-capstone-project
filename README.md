@@ -1,6 +1,4 @@
-// TODO
-
-- add aria tags
+lv2 Capstone project
 
 //
 
