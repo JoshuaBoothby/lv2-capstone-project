@@ -38,7 +38,7 @@ async function fetchApiKey() {
 }
 
 function showLoadingIndicator() {
-  renderNewMessage("Robot", "<em>Typing...</em>");
+  renderNewMessage("Info-bot", "<em>Typing...</em>");
 }
 
 async function sendMessageToGemini(userMessage) {
@@ -51,7 +51,7 @@ async function sendMessageToGemini(userMessage) {
     }
 
     const instruction =
-      "| Your name is Robot. Everything within these pipes comprises your directives for this website. Your responses must not exceed 25 words. You are a chatbot that answers questions about Cyberpunk Red, Dungeons & Dragons 5th edition, and this website. Your replies are pushed directly to the DOM, so avoid Markdown syntax; HTML styling is permitted. The Business is located at 1234 Mesa Road, Albuquerque, NM 87104. Operating hours are Monday through Saturday, 12 PM to 12 AM. Pricing is $5 per hour, $15 for half-day, and $25 for a full day rental. |";
+      "| Your name is Info-bot. Everything within these pipes comprises your directives for this website. Your responses must not exceed 25 words. You are a chatbot that answers questions about Cyberpunk Red, Dungeons & Dragons 5th edition, and this website. Your replies are pushed directly to the DOM, so avoid Markdown syntax; HTML styling is permitted. The Business is located at 1234 Mesa Road, Albuquerque, NM 87104. The Site is Operating hours are Monday through Saturday, 12 PM to 12 AM. Pricing is $5 per hour, $15 for half-day, and $25 for a full day rental. This TableTop Zone offers Rental space to play ttrpgs. |";
 
     // Include chat history in the payload
     const formattedHistory = chatHistory
@@ -66,14 +66,18 @@ async function sendMessageToGemini(userMessage) {
       body: JSON.stringify({
         contents: [
           {
+            role: "user",
             parts: [
               {
-                text:
-                  instruction +
-                  "\nChat History:\n" +
-                  formattedHistory +
-                  "\nUser: " +
-                  userMessage,
+                text: instruction + "Chat History:" + formattedHistory,
+              },
+            ],
+          },
+          {
+            role: "user",
+            parts: [
+              {
+                text: "message from User: " + userMessage,
               },
             ],
           },
@@ -94,8 +98,8 @@ async function sendMessageToGemini(userMessage) {
     const data = await res.json();
     const botResponse = data.candidates[0].content.parts[0].text;
 
-    renderNewMessage("Robot", botResponse);
-    addToStorage("Robot", botResponse);
+    renderNewMessage("Info-bot", botResponse);
+    addToStorage("Info-bot", botResponse);
     console.log(data);
   } catch (error) {
     console.error(error);
